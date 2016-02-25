@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html style="font-size: 100px;">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content=”yes” />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<link rel="stylesheet" type="text/css" href="./css/word.css">
+<title>reportSwiper</title>
+</head>
+
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        
+
+        <div class="swiper-slide bg1" >
+            <div class="bgTop bgTop1">
+                <img src="./img/bg1Top.png">
+            </div>
+            <div class="indexTitleBox">
+                <p class="title pb9">学情报告</p>
+                <p class="class">三年二班</p>
+                <p class="school">北京市师范大学附属小学</p>
+                <p class="teacher">布克老师</p>
+            </div>
+            
+            <div class="bgBottom">
+                <img src="./img/bg1Bottom.png">
+            </div>
+        </div>
+        <div class="swiper-slide bg2" >
+            <div class="bgTop bgTop2">
+                <img src="./img/bg2Top.png">
+            </div>
+            <div class="dataShowBox">
+                <p class="commonTitle">学情概要</p>
+                <div class="box position1">
+                    <p class="boxHead">布置作业</p>
+                    <p><span id="J_ClassWorksNums" class="numTip J_ClassWorksNums"></span>次</p>
+                </div>
+                <div class="box position2">
+                    <p class="boxHead">包含知识点</p>
+                    <p><span class="J_kownledgeQuanlity numTip"></span>个</p>
+                </div>
+                <div class="box position3">
+                    <p class="boxHead">包含题目</p>
+                    <p><span class="J_dataquesitionQuan numTip"></span>道</p>
+                </div>
+                <div class="box position4">
+                    <p class="boxHead font48B">学期时间</p>
+                    <p><span id="learnDuringTime" class="numTip font36"></span></p>
+                </div>
+                <div class="box position5">
+                    <p class="boxHead">平均提交率</p>
+                    <p><span class="numTip J_classSubmissionRate"></span>%</p>
+                </div>
+                <div class="box position6">
+                    <p class="boxHead">平均正确率</p>
+                    <p><span id="rightRate" class="numTip J_Rate"></span>%</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+            
+            <div class="bgBottom">
+                <img src="./img/bg2Bottom.png">
+            </div>
+        </div>
+        <div class="swiper-slide" >
+            <div class="bgTop bgTop3" style="height: 7rem;">
+                <img src="./img/bg3Top.png">
+                <div class="averageRate">
+                    <p><span class="J_Rate"></span>%</p>
+                </div>
+                <div class="maleRate">
+                    <p><span class="J_maleRate"></span>%</p>
+                    男生
+                </div>
+                <div class="femaleRate">
+                    <p><span class="J_femaleRate"></span>%</p>
+                    女生
+                </div>
+            </div>
+            <div class="titleBox">
+                <div class="commonTitleB">
+                    作业正确率
+                </div>
+                <div class="commonTitleGLi">
+                    <ul>
+                        <li>班群平均正确率</li>
+                    </ul>
+                </div>
+            </div>
+           
+            <div class="bgBottom bgBottom3">
+                <img src="./img/bg3Bottom.png">
+                <div class="rightRateBox">
+                    <div class="reverageRate">
+                        <span class="percentBarNoteText">全国平均正确率</span>
+                        <div class="percentBar">
+                            <div class="percentText"><span  class="J_averageRightRateAll"></span><i class="font24">%</i></div>
+                            <div class="J_averageRightRateAllPercent coverPercent"></div>
+                        </div>
+                    </div>
+                    <div class="reverageRate">
+                        <span class="percentBarNoteText">全省(<span class="J_provinceName"></span>)平均正确率</span>
+                        <div class="percentBar J_percentBarP">
+                            <div class="percentText">
+                                <span id="J_percentProvince" class="J_provinceRightRate"></span><i class="font24">%</i>
+                            </div>
+                            <div class="J_provincePercent coverPercent"></div>
+                        </div>
+                    </div>
+                    <div class="provinceReverageRate"></div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide " >
+            <div class="bgTop bgTop3" style="height: 7rem;">
+                <img src="./img/bg4Top.png">
+                <div class="averageRate ">
+                    <p><span class="J_averageTime"></span>s</p>
+                </div>
+                <div class="maleRate">
+                    <p><span class="J_maleTime"></span>s</p>
+                    男生
+                </div>
+                <div class="femaleRate">
+                    <p><span class="J_femaleTime"></span>s</p>
+                    女生
+                </div>
+            </div>
+            <div class="titleBox">
+                <div class="commonTitleB">
+                    作业耗时
+                </div>
+                <div class="commonTitleGLi">
+                    <ul>
+                        <li>班群平均速度</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bgBottom bgBottom4">
+                <img src="./img/bg3Bottom.png">
+                <div class="averageSpeedBox">
+                    <div class="averageSpeedR">
+                        <div class="averageSpeed"><span id="J_averageSpeedAll"></span>s</div>
+                        <span class="percentBarNoteText">全国平均速度</span>
+                    </div>
+                    <div class="averageSpeedL">
+                        <div class="averageSpeed"><span id="J_averageSpeedPro"></span>s</div>
+                        <span class="percentBarNoteText">全省（<span class="J_provinceName"></span>）平均速度</span>
+                    </div>
+                    <div class="provinceReverageRate"></div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" >
+            <div class="bgTop bgTop5678">
+                <div class="imgBox">
+                    <img src="./img/bg5678Top.png">
+                    <div id="J_rightRateFN" class="firstName">暂无</div>
+                    <div id="J_rightRateSN" class="secondName">暂无</div>
+                    <div id="J_rightRateTN" class="threedName">暂无</div>
+                    <div class="firstPercent"><span id="J_rightRateFP">90</span>%</div>
+                    <div class="secondPercent"><span id="J_rightRateSP">80</span>%</div>
+                    <div class="threedPercent"><span id="J_rightRateTP">70.4</span>%</div>
+                </div>
+            </div>
+            <div class="titleBox bgTitleTop5678">
+                <div class="commonTitleB">
+                    谁最准
+                </div>
+                <div class="commonSubTitle">
+                        按正确率排名
+                </div>
+            </div>
+            <div id="rightRateListBox1" class="rightRateListBox swiper-no-swiping">
+                <ul id="J_rightRateRankingListBox">
+                      <div style="text-align: left">
+                            <div class="listIconBox"><img src="./img/listIcon.png"></div>
+                            <span class="rankingNum">4</span><span class="rankingName">路斯</span>
+                        </div>
+                        <div class="percentBarBox fl">
+                            <div class="percentBar" style="width:50%"></div>
+                        </div>
+                        <span class="percentNum fr">50%</span>                  
+                </ul>
+                <div class="place1rem"></div>
+            </div>
+            
+        </div>
+        <div class="swiper-slide" >
+            <div class="bgTop bgTop5678">
+                <div class="imgBox">
+                    <img src="./img/bg5678Top.png">
+                    <div id="J_speedFN" class="firstName">暂无</div>
+                    <div id="J_speedSN" class="secondName">暂无</div>
+                    <div id="J_speedTN" class="threedName">暂无</div>
+                    <div class="firstPercent"><span id="J_speedFP"></span>s</div>
+                    <div class="secondPercent"><span id="J_speedSP"></span>s</div>
+                    <div class="threedPercent"><span id="J_speedTP"></span>s</div>
+                </div>
+            </div>
+            <div class="titleBox bgTitleTop5678">
+                <div class="commonTitleB">
+                    谁最快
+                </div>
+                <div class="commonSubTitle">
+                    按平均每道题耗时长短排名
+                </div>
+            </div>
+            <div id="rightRateListBox2" class="rightRateListBox swiper-no-swiping">
+                <ul id="J_speedRankingListBox">
+                    <div style="text-align: left">
+                            <div class="listIconBox"><img src="./img/listIcon.png"></div>
+                            <span class="rankingNum">4</span><span class="rankingName">路斯</span>
+                        </div>
+                        <div class="percentBarBox fl">
+                            <div class="percentBar yellow" style="width:50%"></div>
+                        </div>
+                        <span class="percentNum fr">50%</span>
+                </ul>
+                <div class="place1rem"></div>
+            </div>
+            
+        </div>
+        <div class="swiper-slide" >
+            <div class="bgTop bgTop5678">
+                <div class="imgBox">
+                    <img src="./img/bg5678Top.png">
+                    <div id="J_submitFN" class="firstName">暂无</div>
+                    <div id="J_submitSN" class="secondName">暂无</div>
+                    <div id="J_submitTN" class="threedName">暂无</div>
+                    <div class="firstPercent"><span id="J_submitFP">90</span>%</div>
+                    <div class="secondPercent"><span id="J_submitSP">80</span>%</div>
+                    <div class="threedPercent"><span id="J_submitTP">70.4</span>%</div>
+
+                </div>
+            </div>
+            <div class="titleBox bgTitleTop5678">
+                <div class="commonTitleB">
+                    谁最勤奋
+                </div>
+                <div class="commonSubTitle">
+                        按提交率排名
+                </div>
+            </div>
+            <div id="rightRateListBox3" class="rightRateListBox swiper-no-swiping">
+                <ul id="J_rightRateListBox">
+                    <li>
+                        <div style="text-align: left">
+                            <div class="listIconBox"><img src="./img/listIcon.png"></div>
+                            <span class="rankingNum">4</span><span class="rankingName">路斯</span>
+                        </div>
+                        <div class="percentBarBox fl">
+                            <div class="percentBar blue" style="width:50%"></div>
+                        </div>
+                        <span class="percentNum fr">50%</span>
+                    </li>
+                </ul>
+                <div class="place1rem"></div>
+            </div>
+            
+        </div>
+        <div class="swiper-slide" >
+            <div class="bgTop bgTop5678">
+                <div class="imgBox">
+                    <img src="./img/bg5678Top.png">
+                    <div id="J_PKsucceedNumFN" class="firstName">暂无</div>
+                    <div id="J_PKsucceedNumSN" class="secondName">暂无</div>
+                    <div id="J_PKsucceedNumTN" class="threedName">暂无</div>
+                    <div class="firstPercent"><span id="J_PKsucceedNumFP" >1290</span>胜</div>
+                    <div class="secondPercent"><span id="J_PKsucceedNumSP" >1280</span>胜</div>
+                    <div class="threedPercent"><span id="J_PKsucceedNumTP" >1270</span>胜</div>
+                </div>
+            </div>
+            <div class="titleBox bgTitleTop5678">
+                <div class="commonTitleB">
+                    速算PK之王
+                </div>
+                <div class="commonSubTitle">
+                        按PK胜利排名
+                </div>
+            </div>
+            <div id="rightRateListBox4" class="rightRateListBox swiper-no-swiping">
+                <ul id="J_PKsucceedNumListBox">
+                    <div style="text-align: left">
+                            <div class="listIconBox"><img src="./img/listIcon.png"></div>
+                            <span class="rankingNum">4</span><span class="rankingName">路斯</span>
+                        </div>
+                        <div class="percentBarBox fl">
+                            <div class="percentBar orange" style="width:50%"></div>
+                        </div>
+                        <span class="percentNum fr">50%</span>
+                </ul>
+                <div class="place1rem"></div>
+            </div>
+            
+        </div>
+        <div class="swiper-slide bg9" >
+            <div class="bgTop bgTop9">
+                <img src="./img/bg9Top.png">
+            </div>
+            <div class="resultBoxC">
+                <div class="titleBox">
+                    <div class="commonTitleB">
+                        知识点掌握
+                    </div>
+                    <div class="commonSubTitle">
+                        <a href="###">按正确率从高到低排列</a>
+                    </div>
+                    <div class="resultList swiper-no-swiping">
+                        <div class="titleR">
+                            全省
+                        </div>
+                        <div>
+                        <ol id="J_kownledgeRankingListBox">
+                            <li>
+                                <div class="konwledgeTitle">一二三四五六</div>  
+                                 <div class="J_allAverknowledgesRates tips fr ">90.32%</div>
+                                 <div class="tips fontB fr"><span ></span>%</div>
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bgBottom">
+                <img src="./img/bg9Bottom.png">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/swiper-3.2.7.jquery.min.js"></script>
+<script type="text/javascript">
+
+</html>

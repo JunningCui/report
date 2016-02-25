@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content=”yes” />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<title>others</title>
+<link rel="stylesheet" type="text/css" href="./css/calender.css">
+</head>
+<style type="text/css">
+
+</style>
+<body>
+    <div class="createReportComponent">
+        <ul>
+            <li id="beginTimeLi" class="calender">
+              <div class="boxL fl">开始时间</div>
+              <div class="boxR fr">
+                 <input id="beginTime" type="input" value="2015年12月03日" placeholder="2016年01月01日" readOnly="true" >
+                 <div class="arrRight fr">
+                   <img src="./img/arrRight.png">
+                 </div>
+              </div>
+            </li>
+            <li id="endTimeLi" class="calender">
+              <div class="boxL fl">结束时间</div>
+              <div class="boxR fr">
+                 <input id="endTime" type="input" value="2015年12月03日" placeholder="2016年01月01日" readOnly="true" >
+                 <div class="arrRight fr">
+                   <img src="./img/arrRight.png">
+                 </div>
+              </div>
+            </li>
+             <li id="selectClassGroupLi" class="mt2">
+              <div class="boxL fl">班群</div>
+              <div class="boxR fr">
+                 <input type="input" value="" placeholder="请选择班群" readOnly="true" >
+                 <div class="arrRight fr">
+                   <img src="./img/arrRight.png">
+                 </div>
+              </div>
+            </li>
+            <li id="inputEmailLi" class="mt2">
+              <div class="boxL fl">邮箱</div>
+              <div class="boxR fr">
+                 <input id="eMailInputShow" type="input" value="" placeholder="学情报告将发送到您填写的邮箱" readOnly="true" >
+                 <div  class="arrRight fr">
+                   <img src="./img/arrRight.png">
+                 </div>
+              </div>
+            </li>
+        </ul>
+    </div>
+    <div id="J_createReportBtn" class="createReportBtn">
+      生成报告
+    </div>
+<div class="popDiv" >
+  <div class="popBg"></div>
+  <div class="popBox" id="popCalender" onselectstart="return false">
+        <div class="cui-pop-box">
+          <div class="cui-hd">
+              <span class="cui-btns-cancel fl" id="cancelBtn">取消</span>
+              <div class="cui-text-center"></div>
+              <span class="cui-btns-sure fr" id="confirmBtn">获取日期</span>
+          </div>
+          <div class="cui-bd">
+              <div style="height: 1.4rem; position: relative;">
+                  <div id="y" class="c">
+                  </div>
+                  <div id="m" class="c">
+                  </div>
+                  <div id="d" class="c">
+                  </div>
+              </div>
+              <p class="cui-roller-tips"></p>
+              <div class="cui-roller-btns">
+                   
+
+              </div>
+          </div>
+        </div>
+     
+  </div>
+</div>
+<div class="popDiv" >
+  <div class="popBg"></div>
+  <div class="popBox" id="popCalenderEnd" onselectstart="return false">
+        <div class="cui-pop-box">
+          <div class="cui-hd">
+              <span class="cui-btns-cancel cui-btns-cancel2 fl" id="cancelBtn">取消</span>
+              <div class="cui-text-center"></div>
+              <span class="cui-btns-sure cui-btns-sure2 fr" id="confirmBtn">完成</span>
+          </div>
+          <div class="cui-bd">
+              <div style="height: 90px; position: relative;">
+                  <div id="y2" class="c">
+                  </div>
+                  <div id="m2" class="c">
+                  </div>
+                  <div id="d2" class="c">
+                  </div>
+              </div>
+              <p class="cui-roller-tips"></p>
+              <div class="cui-roller-btns">
+                   
+
+              </div>
+          </div>
+        </div>
+     
+  </div>
+</div>
+<div class="popDiv">
+  <div class="popBg"></div>
+  <div id="popEmailBox" class="popBox" >
+    <div class="tipsComponent">
+      <div class="tipHead"></div>
+      <div class="tipBody">
+        <input id="eMailInput" type="" value="">
+        <div id="resetEmail" class="resetBtn">
+          <img src="./img/reset.png">
+        </div>
+      </div>
+      <div class="tipFooter">
+        <div  id="cancelBtnEmail">取消</div>
+        <div  id="submitBtn">完成</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="popDiv">
+  <div class="popBg"></div>
+  <div id="popAfterEmailBox" class="popBox" >
+    <div class="tipsComponent">
+      <div class="tipHead"></div>
+      <div class="tipBody">
+        学情报告已发送到您的邮箱，<br>
+        请注意查收！
+      </div>
+      <div class="tipFooter">
+        <div  id="cancelIt">知道了</div>
+        <div  id="goReport"><a href="./report.html">先去预览一下</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="popDiv">
+  <div class="popBg"></div>
+  <div class="popBox" id="popGradeBox">
+       <div class="cui-pop-box">
+          <div class="cui-hd">
+              <span class="cui-btns-cancel cui-btns-cancel3 fl" >取消</span>
+              <div class="cui-text-center"></div>
+              <span class="cui-btns-sure cui-btns-sure3 fr" >完成</span>
+          </div>
+          <div class="cui-bd">
+              <div style="height: 90px; position: relative;">
+                  <div id="grade" class="c">
+                  </div>
+              </div>
+              <p class="cui-roller-tips"></p>
+              <div class="cui-roller-btns">
+              </div>
+          </div>
+   </div>
+  </div>
+</div>
+<div class="popDiv">
+  <div class="popBg"></div>
+  <div class="popBox" id="alertBox">
+    <div class="tipsComponent">
+      <div class="tipHead"></div>
+      <div class="tipBody">
+        邮箱格式有错误！
+      </div>
+      <div class="tipFooter">
+        <div  id="okBtn" style="width:100%">完成</div>
+      </div>
+    </div>
+   </div>
+  </div>
+</div>
+<script type="text/javascript" src="./js/zepto.js"></script>
+<script type="text/javascript" src="./js/calender.js"></script>
+<script type="text/javascript">
+var calenderBeginFlag = 0;
+var calenderEndFlag = 0;
+var gradeFlag = 0;
+$("#resetEmail").on("click",function (){
+  $("#eMailInput").val("");
+})
+$("#beginTimeLi").on("click",function (){
+   $.fn.popDiv({
+            id:"#popCalender",
+            confirmBtn:"#confirmBtn",
+            cancelBtn:"#cancelBtn",
+            headTitle:'',
+            confirmBtnText:'完成',
+            cancelBtnText:'取消',
+        });
+if(calenderBeginFlag == 0){
+    var yy = [];
+    for (var i = 0; i < 150; i++) {
+        var temp = { val: 2015 + i };
+        yy.push(temp);
+    }
+    var mm = [];
+    for (var i = 1; i < 13; i++) {
+        var temp = { val: i > 9 ? i : (0 + '' + i) };
+        mm.push(temp);
+    }
+
+    var dd = [];
+    for (var i = 1; i < 32; i++) {
+        var temp = { val: i > 9 ? i : (0 + '' + i) };
+        dd.push(temp);
+    }
+
+     var y = new ScrollRadio({
+        wrapper: $('#y'),
+        data: yy
+    });
+    var m = new ScrollRadio({
+        wrapper: $('#m'),
+        data: mm
+    });
+    var d = new ScrollRadio({
+        wrapper: $('#d'),
+        data: dd
+    });
+
+    var s = '';
+    calenderBeginFlag = 1;
+        var _this = $(this);
+    $('.cui-btns-sure').click(function () {
+      _this.find("input").val(y.getSelected().val + '年' + m.getSelected().val + '月' + d.getSelected().val+"日").addClass("changedInput");
+      $(this).parents(".popDiv").hide();
+     
+    });
+    $(".cui-btns-cancel").on('click',function (){
+         $(this).parents(".popDiv").hide();
+        
+     })
+}
+
+})
+
+$("#endTimeLi").on("click",function (){
+   $.fn.popDiv({
+            id:"#popCalenderEnd",
+            confirmBtn:"#confirmBtn",
+            cancelBtn:"#cancelBtn",
+            headTitle:'',
+            confirmBtnText:'完成',
+            cancelBtnText:'取消',
+        });
+    if(calenderEndFlag == 0){
+        var yy2 = [];
+        for (var i = 0; i < 150; i++) {
+            var temp = { val: 2015 + i };
+            yy2.push(temp);
+        }
+        var mm2 = [];
+        for (var i = 1; i < 13; i++) {
+            var temp = { val: i > 9 ? i : (0 + '' + i) };
+            mm2.push(temp);
+        }
+        var dd2 = [];
+        for (var i = 1; i < 32; i++) {
+            var temp = { val: i > 9 ? i : (0 + '' + i) };
+            dd2.push(temp);
+        }
+         var y2 = new ScrollRadio({
+            wrapper: $('#y2'),
+            data: yy2
+        });
+        var m2 = new ScrollRadio({
+            wrapper: $('#m2'),
+            data: mm2
+        });
+        var d2 = new ScrollRadio({
+            wrapper: $('#d2'),
+            data: dd2
+        });
+        var s2 = '';
+        calenderEndFlag = 1;
+        var _this = $(this);
+        $('.cui-btns-sure2').click(function () {
+          var str=y2.getSelected().val + '年' + m2.getSelected().val + '月' + d2.getSelected().val+"日"
+          _this.find("input").val(str).addClass("changedInput");
+          $(this).parents(".popDiv").hide();
+        });
+        $(".cui-btns-cancel2").on('click',function (){
+             $(this).parents(".popDiv").hide();
+         })
+      }  
+})
+$("#inputEmailLi").on("click",function (){
+  $.fn.popDiv({
+            id:"#popEmailBox",
+            headTitle:'邮箱',
+            confirmBtnText:'完成',
+            cancelBtnText:'取消',
+        });
+  var _this = $(this);
+ 
+  
+})
+ $("#submitBtn").on("click",function (){
+    if(CheckMail($("#eMailInput").val())){
+       var str = $("#eMailInput").val();
+     }else{
+      $("#eMailInput").val('');
+      return false;
+     }
+   
+  $("#eMailInputShow").val(str).addClass("changedInput");;
+     $(this).parents(".popDiv").hide()
+  })
+  $("#cancelBtnEmail").on("click",function (){
+    $("#eMailInput").val('');
+    $(this).parents(".popDiv").hide();
+  })
+$("#J_createReportBtn").on("click",function (){
+  $.fn.popDiv({
+            id:"#popAfterEmailBox",
+            headTitle:'',
+           // confirmBtnText:'完成',
+           //cancelBtnText:'取消',
+        });
+  
+  $("#cancelIt").on("click",function (){
+    $(this).parents(".popDiv").hide();
+  })
+  
+})
+
+$("#selectClassGroupLi").on("click",function (){
+ 
+  $.fn.popDiv({
+            id:"#popGradeBox",
+            confirmBtn:"#confirmBtn2",
+            cancelBtn:"#cancelBtn2",
+            headTitle:'邮箱',
+            confirmBtnText:'完成',
+            cancelBtnText:'取消',
+        });
+  if(gradeFlag == 0){
+    var grade = [{ val: "一年级" }];
+    var gradeList = new ScrollRadio({
+          wrapper: $("#grade"),
+          data: grade
+      });
+    gradeFlag = 1;
+   
+    var _this = $(this);
+    $('.cui-btns-sure3').click(function () {
+        var d = gradeList.getSelected();
+          var str = '';
+          for (var k in d) {
+              str +=  d[k];
+          }
+        _this.find("input").val(str).addClass("changedInput");
+        $(this).parents(".popDiv").hide();
+    });
+    $(".cui-btns-cancel3").on('click',function (){
+        $(this).parents(".popDiv").hide();
+     })
+  }
+});
+function CheckMail(mail) {
+   var filter  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+   if (filter.test(mail)){
+      return true;
+   }else {
+      //alert('您的电子邮件格式不正确');
+      $("#popEmailBox").parent(".popDiv").hide()
+      $.fn.popDiv({
+            id:"#alertBox",
+            confirmBtn:"#okBtn",
+            headTitle:'消息',
+            confirmBtnText:'完成',
+        });
+     
+      return false;
+    }
+}
+$("#okBtn").on('click',function (){
+        $(this).parents(".popDiv").hide();
+         $("#popEmailBox").parent(".popDiv").show();
+     })
+</script>
+</body>

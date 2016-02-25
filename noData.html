@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content=”yes” />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<link rel="stylesheet" type="text/css" href="./css/index.css">
+<title>reportSwiper</title>
+</head>
+<script type="text/javascript">
+	;(function (doc, win) {
+    var docEl = doc.documentElement,
+      resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+      recalc = function () {
+        var clientWidth = docEl.clientWidth;
+        var clientHeight = docEl.clientHeight;
+        if (!clientWidth) return;
+        if (clientWidth < clientHeight) {
+            docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+        }else{
+          docEl.style.fontSize = 50 * (clientWidth / 1008) + 'px';
+        }
+      };
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);   
+	})(document, window);
+</script>
+<style type="text/css">
+body{text-align: center;color: #fff}
+  .wrap{position: absolute;top: 0;bottom: 0;right: 0;left: 0;background: #53B6E9;}
+  .noDataBox{width: 3.85rem;height: 3.18rem;margin: 0 auto;position: absolute;top: 27%;right: 0;left: 0}
+  .noDataBox img{width: 100%;height: auto;}
+  .topTitle{position: absolute;top: 1.51rem;width: 100%}
+  h1{font-size: 0.36rem}
+  h2{font-size: 0.32rem;font-weight: normal;}
+  h3{font-size: 0.28rem}
+  .bottomTips{position: absolute;bottom: 3.03rem;width: 100%;font-weight: normal;}
+  .cloud{width: 1.27rem;height: 0.5rem;position: absolute;right: 0;bottom: 1.51rem}
+  .cloud img{width: 100%}
+</style>
+<body>
+<div class="wrap">
+  <div class="topTitle">
+    <h1>学期时间</h1>
+    <h3><span class="J_timeBegin">2015-09-01</span>--<span class="J_timeEnd">2016-09-01</span></h3>
+  </div>
+  <div class="noDataBox">
+     <img src="./img/noData.png">
+  </div>
+  <div class="bottomTips">
+     <h2>暂无作业数据</h2>
+  </div>
+  <div class="cloud">
+    <img src="./img/noDataCloud.png">
+  </div>
+</div>
+</body>
+</html>
